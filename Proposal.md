@@ -141,4 +141,5 @@ Visualization Output
 ## 7.2 Timeline
 
 Below is our project timeline:
+
 ![alt text](timeline-1.png)
