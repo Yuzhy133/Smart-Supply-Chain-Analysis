@@ -1,11 +1,11 @@
-#### INFO 442 Data Science Projects
-# Smart Supply Chain Analysis and Prediction Improvement
-# Project Proposal
+## INFO 442 Data Science Projects <!-- omit in toc -->
+# Smart Supply Chain Analysis and Prediction Improvement <!-- omit in toc -->
+# Project Proposal<!-- omit in toc -->
 
 > Group Number: 19  
 > Date: May 11th, 2026
 
-### Members
+### Members<!-- omit in toc -->
 
 | English Name| Chinese Name | Student ID |
 |---|---|---|
@@ -16,12 +16,8 @@
 
 ---
 
-# Table of Contents
+# Table of Contents<!-- omit in toc -->
 
-- [Smart Supply Chain Analysis and Prediction Improvement](#smart-supply-chain-analysis-and-prediction-improvement)
-- [Project Proposal](#project-proposal)
-    - [Members](#members)
-- [Table of Contents](#table-of-contents)
 - [1. Domain and Motivation](#1-domain-and-motivation)
 - [2. Dataset Description](#2-dataset-description)
 - [3. Scientific Question](#3-scientific-question)
@@ -119,10 +115,10 @@ Visualization Output
 
 | Member | Student ID | Core Responsibilities |
 |---|---|---|
-| Ruohan Si | 320230942290 | Data engineering, preprocessing, feature engineering, and exploratory analysis |
-| Zhuoyang Yu | 320230942650 | Customer behavior analysis, RFM modeling, fraud analysis, visualization |
-| Aoqi Cui | 320230941760 | Predictive model development and forecasting |
-| Feixuan Yan | 320230942850 | Model optimization, report writing, PPT creation, and strategy formulation |
+| **Ruohan Si** | 320230942290 | **Data engineering and foundational analysis**: data acquisition, cleaning, preprocessing, basic feature engineering, and initial exploratory data analysis on sales and operations.|
+| **Zhuoyang Yu** | 320230942650 | **In-depth analysis and visualization**: customer behavior analysis, RFM modeling, fraud and risk pattern identification, and creating all key visualizations for reports. |
+| **Aoqi Cui** | 320230941760 | **Predictive model development**: building, training, initial evaluation of time-series models, ensemble tree models, and classification models for demand forecasting. |
+| **Feixuan Yan**| 320230942850 | **Model optimization and integration**: hyperparameter tuning, clustering analysis, leading report writing, PPT creation, and strategy formulation based on all findings. |
 
 ---
 
@@ -136,7 +132,6 @@ Visualization Output
 
 **Structured Workflow**：The work is broken down into a clear plan with defined phases for data preparation, analysis, modeling, and reporting. This structured approach ensures all deliverables can be completed on time.
 
----
 
 ## 7.2 Timeline
 
