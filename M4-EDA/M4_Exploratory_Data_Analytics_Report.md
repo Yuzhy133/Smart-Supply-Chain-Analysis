@@ -239,7 +239,7 @@ This is a **regression** problem, which aligns with the team's previous modellin
 
 **Target variable:** `sales`.
 
-**Recommended evaluation metrics:** MSE, RMSE, MAE, and R-squared.
+**Evaluation metrics:** MSE, RMSE, MAE, and R-squared.
 
 **Candidate feature groups:**
 
@@ -255,4 +255,4 @@ This is a **regression** problem, which aligns with the team's previous modellin
 
 The EDA shows that sales are unevenly distributed across products, markets, regions, and time periods. Product-level charts support the team's original expectation that product features matter for sales, while monthly and hourly patterns suggest that time features may improve prediction. Market and regional charts show geographic variation, and RFM analysis provides a possible customer-level extension for future feature engineering.
 
-Fraud and delivery-risk analyses remain useful business context. Suspected fraud appears related to payment type, region, product category, and customer, while late delivery risk varies by market and shipping mode. However, these findings do not require changing the next modelling target. The recommended next step is to continue with the existing **sales prediction regression** framework and improve it using EDA-supported features.
+Fraud and delivery-risk analyses remain useful business context. Suspected fraud appears related to payment type, region, product category, and customer, while late delivery risk varies by market and shipping mode. However, these findings do not require changing the next modelling target. We will continue to build a supervised regression model that predicts order-item sales use the **sales prediction regression** framework and improve it using EDA-supported features.
