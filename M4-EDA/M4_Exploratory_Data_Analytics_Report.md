@@ -1,8 +1,7 @@
 # M4 Exploratory Data Analytics Report
 
-**Project:** DataCo Supply Chain Dataset EDA  
+**Project:** Smart-Supply-Chain-Analysis  
 **Milestone:** M4 - Exploratory Data Analytics Report  
-**Companion notebook:** `INFO371-Class2-Group8-M4_EDA.ipynb`
 
 ---
 
