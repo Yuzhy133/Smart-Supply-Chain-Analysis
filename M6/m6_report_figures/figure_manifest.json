@@ -1,0 +1,163 @@
+[
+  {
+    "num": 1,
+    "cell": 18,
+    "heading": "## 1.1 Sales Distribution with Focused X-Axis",
+    "file": "m4_report_figures/fig_01_1_1_sales_distribution_with_focused_x_axis.png",
+    "interpretation": "**Interpretation:** This keeps the original sales-distribution idea but narrows the x-axis so the main pattern is readable. Sales are right-skewed, meaning most order items are moderate in value while a smaller group of high-value items creates the long tail."
+  },
+  {
+    "num": 2,
+    "cell": 21,
+    "heading": "## 1.2 Benefit Per Order Distribution with Focused X-Axis",
+    "file": "m4_report_figures/fig_02_1_2_benefit_per_order_distribution_with_focused_x_axis.png",
+    "interpretation": "**Interpretation:** The focused x-axis makes the negative-profit region easier to see. A meaningful share of order items falls below zero benefit, so product, region, shipping, and discount variables should be evaluated not only for sales but also for profitability risk."
+  },
+  {
+    "num": 3,
+    "cell": 24,
+    "heading": "## 1.3 Top Ten Products by Quantity Sold",
+    "file": "m4_report_figures/fig_03_1_3_top_ten_products_by_quantity_sold.png",
+    "interpretation": "**Interpretation:** A small number of products account for the highest quantities sold. This supports the original product-driven hypothesis: product identity and category are likely important for understanding sales performance."
+  },
+  {
+    "num": 4,
+    "cell": 27,
+    "heading": "## 1.4 Total Sales by Market",
+    "file": "m4_report_figures/fig_04_1_4_total_sales_by_market.png",
+    "interpretation": "**Interpretation:** Total sales per customer are concentrated in certain markets. Market should therefore be included in later analysis because overall sales patterns may be shaped by geography."
+  },
+  {
+    "num": 5,
+    "cell": 30,
+    "heading": "## 1.5 Total Sales by Region",
+    "file": "m4_report_figures/fig_05_1_5_total_sales_by_region.png",
+    "interpretation": "**Interpretation:** Sales also vary substantially by order region. This suggests that regional demand and market structure may influence sales outcomes, so regional comparisons should be rate-based rather than relying only on total counts."
+  },
+  {
+    "num": 6,
+    "cell": 33,
+    "heading": "## 1.6 Loss-Making Product Categories",
+    "file": "m4_report_figures/fig_06_1_6_loss_making_product_categories.png",
+    "interpretation": "**Interpretation:** Loss-making orders are concentrated in particular product categories. This means product features do not only affect sales volume; they may also affect profitability risk."
+  },
+  {
+    "num": 7,
+    "cell": 36,
+    "heading": "## 1.7 Suspected Fraud Distribution by Region",
+    "file": "m4_report_figures/fig_07_1_7_suspected_fraud_distribution_by_region.png",
+    "interpretation": "**Interpretation:** Suspected fraud orders are not evenly distributed across regions. However, this chart shows the distribution among fraud cases, so the report should also compare fraud rates by region before concluding that a region is truly high-risk."
+  },
+  {
+    "num": 8,
+    "cell": 39,
+    "heading": "## 1.8 Suspected Fraud by Payment Method",
+    "file": "m4_report_figures/fig_08_1_8_suspected_fraud_by_payment_method.png",
+    "interpretation": "**Interpretation:** Suspected fraud cases are concentrated among payment types. This partially supports the team's hypothesis that payment method may be related to fraud risk."
+  },
+  {
+    "num": 9,
+    "cell": 42,
+    "heading": "## 1.9 Suspected Fraud by Product Category",
+    "file": "m4_report_figures/fig_09_1_9_suspected_fraud_by_product_category.png",
+    "interpretation": "**Interpretation:** Some product categories appear more frequently in suspected fraud orders. This suggests that fraud risk may be associated with product type, although category-level fraud rates should also be checked because high-volume categories naturally produce more cases."
+  },
+  {
+    "num": 10,
+    "cell": 45,
+    "heading": "## 1.10 Customers with the Most Suspected Fraud Cases",
+    "file": "m4_report_figures/fig_10_1_10_customers_with_the_most_suspected_fraud_cases.png",
+    "interpretation": "**Interpretation:** A few customer names appear more often among suspected fraud cases. This may indicate repeated suspicious activity, but customer-level interpretation should be handled carefully because names may not uniquely identify individuals."
+  },
+  {
+    "num": 11,
+    "cell": 52,
+    "heading": "## 1.12 RFM Customer Value Pyramid",
+    "file": "m4_report_figures/fig_11_1_12_rfm_customer_value_pyramid.png",
+    "interpretation": "**Interpretation:** The RFM value pyramid shows that customers are distributed unevenly across value groups. This supports using RFM stratification as a descriptive tool and potentially as a feature source in later modelling."
+  },
+  {
+    "num": 12,
+    "cell": 55,
+    "heading": "## 1.13 RFM Customer Segment Distribution",
+    "file": "m4_report_figures/fig_12_1_13_rfm_customer_segment_distribution.png",
+    "interpretation": "**Interpretation:** The pie chart gives a second view of the RFM segment distribution. It confirms that customer value groups are imbalanced, so recommendations should not assume that all customer segments contribute equally."
+  },
+  {
+    "num": 13,
+    "cell": 59,
+    "heading": "## 2.1 Monthly Sales by Year",
+    "file": "m4_report_figures/fig_13_2_1_monthly_sales_by_year.png",
+    "interpretation": "**Interpretation:** Monthly sales vary across years and months rather than staying flat. This supports the team's expectation that sales may have a time pattern, although formal seasonality would need additional testing in the modelling stage."
+  },
+  {
+    "num": 14,
+    "cell": 62,
+    "heading": "## 2.2 Order Volume by Hour of Day",
+    "file": "m4_report_figures/fig_14_2_2_order_volume_by_hour_of_day.png",
+    "interpretation": "**Interpretation:** Order volume changes by hour of day, showing that customer activity is not evenly distributed across the 24-hour cycle. Hourly timing may be useful as a feature if the final model predicts demand, delivery risk, or operational load."
+  },
+  {
+    "num": 15,
+    "cell": 65,
+    "heading": "## 2.3 Late Delivery Rate by Region",
+    "file": "m4_report_figures/fig_15_2_3_late_delivery_rate_by_region.png",
+    "interpretation": "**Interpretation:** Late delivery rates differ by region. This introduces an important operational risk pattern that was not the main focus of the original hypotheses but appears strong enough to consider for modelling."
+  },
+  {
+    "num": 16,
+    "cell": 68,
+    "heading": "## 2.4 Late Delivery Risk by Shipping Mode and Market",
+    "file": "m4_report_figures/fig_16_2_4_late_delivery_risk_by_shipping_mode_and_market.png",
+    "interpretation": "**Interpretation:** This bivariate analysis shows that late delivery risk changes by both shipping mode and market. The finding adds an operational-risk dimension to the original hypotheses, which focused more on product features and fraud."
+  },
+  {
+    "num": 17,
+    "cell": 71,
+    "heading": "## 2.5 Sales vs Benefit Per Order",
+    "file": "m4_report_figures/fig_17_2_5_sales_vs_benefit_per_order.png",
+    "interpretation": "**Interpretation:** Sales and benefit are related, but high sales do not guarantee positive profit. This means the team should be careful about defining success only as higher sales; profitability and loss risk are separate business concerns."
+  },
+  {
+    "num": 18,
+    "cell": 74,
+    "heading": "## 2.6 Loss Rate by Region",
+    "file": "m4_report_figures/fig_18_2_6_loss_rate_by_region.png",
+    "interpretation": "**Interpretation:** Loss rates differ across regions, which suggests that regional business conditions, product mix, discounting, or logistics may influence profitability. This is a risk pattern worth checking before modelling."
+  },
+  {
+    "num": 19,
+    "cell": 78,
+    "heading": "## 3.1 Average Monthly Quantity for Top Products",
+    "file": "m4_report_figures/fig_19_3_1_average_monthly_quantity_for_top_products.png",
+    "interpretation": "**Interpretation:** The top products have different monthly quantity patterns, so product performance is not uniform over time. This strengthens the idea that both product features and time features should be considered together."
+  },
+  {
+    "num": 20,
+    "cell": 81,
+    "heading": "## 3.2 Late Delivery Rate by Region and Shipping Mode",
+    "file": "m4_report_figures/fig_20_3_2_late_delivery_rate_by_region_and_shipping_mode.png",
+    "interpretation": "**Interpretation:** Late delivery risk changes across both region and shipping mode. This is already a multivariate pattern because the relationship between delivery risk and shipping mode depends on region."
+  },
+  {
+    "num": 21,
+    "cell": 84,
+    "heading": "## 3.3 Shipping Mode Mix by Market",
+    "file": "m4_report_figures/fig_21_3_3_shipping_mode_mix_by_market.png",
+    "interpretation": "**Interpretation:** Although the original title says monthly distribution, the code groups orders by market and shipping mode. The chart still shows useful information: markets rely on different mixes of shipping modes, which may partly explain market-level delivery risk."
+  },
+  {
+    "num": 22,
+    "cell": 87,
+    "heading": "## 3.4 Late Delivery Rate by Market and Shipping Mode",
+    "file": "m4_report_figures/fig_22_3_4_late_delivery_rate_by_market_and_shipping_mode.png",
+    "interpretation": "**Interpretation:** This multivariate heatmap compares late delivery risk across market and shipping mode at the same time. The risk level depends on the combination of geography and shipping choice, so later models should allow interactions between these features."
+  },
+  {
+    "num": 23,
+    "cell": 90,
+    "heading": "## 3.5 Product Category Sales, Profit, and Late Delivery Risk",
+    "file": "m4_report_figures/fig_23_3_5_product_category_sales_profit_and_late_delivery_risk.png",
+    "interpretation": "**Interpretation:** This multivariate product-category chart avoids the label overlap problem by using offset annotations. It shows that product categories differ across sales, average profit, order volume, and late delivery risk, so product features should be combined with operational variables in later modelling."
+  }
+]
