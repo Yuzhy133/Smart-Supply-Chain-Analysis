@@ -286,10 +286,6 @@ The performance of each regression model on the temporally separated test set is
 | **Random Forest** | **1.33** | 1.15 | 0.04 | **0.9999** | 0.04 |
 | Gradient Boosting | 433.94 | 20.83 | 7.60 | **0.9655** | 8.96 |
 
-<img src="m6_report_figures/output.png" width="720">
-
-> **Figure 5.1** – Model Performance Comparison  
-
 
 #### 5.1.1 Interpretation of Each Model's Performance
 
@@ -313,7 +309,7 @@ The nearly identical R² values on training and test sets confirm that the model
 
 The scatter plot of Random Forest predictions versus actual values on the test set shows all points tightly clustered around the red diagonal (perfect prediction line), visually confirming extremely small prediction errors across the vast majority of samples and validating the quantitative metrics above.
 <img src="m6_report_figures/capture_20260617143417502.bmp" width="720">
-> **Figure 5.2** – Actual vs. Predicted Sales (Random Forest)  
+> **Figure 5.1** – Actual vs. Predicted Sales (Random Forest)  
 
 ### 5.2 Feature Importance Analysis
 
@@ -332,7 +328,7 @@ The built-in feature importance from the Random Forest model (based on mean decr
 
 <img src="m6_report_figures/capture_20260617143512000.bmp" width="720">
 
-> **Figure 5.3** – Feature Importance Ranking (Random Forest)  
+> **Figure 5.2** – Feature Importance Ranking (Random Forest)  
 
 #### 5.2.2 Business Insights
 
@@ -462,6 +458,48 @@ streamlit run run.py
 
 Once the command runs successfully, the dashboard page will open in the browser. Users can use the sidebar navigation to switch between **Project Overview**, **Data Visualization Analysis**, and **Sales Prediction Modeling** to view the visualization results and modeling outputs in different sections.
 
+----
+
+## 8. Overall Limitations and Strategic Next Steps
+
+### 8.1 Data Layer
+
+#### 8.1.1 Limitations
+- **US-Biased Sampling**: Over 70% of transactional records originate from the US market. Emerging markets (e.g., Africa, Pacific Asia) are severely underrepresented, making regional predictions statistically unreliable.
+- **Temporal Obsolescence**: The dataset only covers 2015–2017. Consumer behavior, product portfolios, and global supply chain dynamics have evolved significantly in subsequent years.
+- **Cold-Start Problem**: All predictive models rely heavily on `product_name` and `category_id`. For newly launched products with zero historical sales records, the system cannot generate reliable forecasts.
+
+#### 8.1.2 Strategic Next Steps
+- **Quarterly Retraining**: Establish a scheduled pipeline to retrain all models (Random Forest, Gradient Boosting, and Prophet) on a quarterly basis using the most recent transactional data to mitigate temporal drift.
+- **Category-Level Fallback for New Items**: Implement a hierarchical prediction strategy—when a new product lacks historical sales, fall back to its `category_id` baseline (which contributes 27.1% of explanatory power) until sufficient item-level data accumulates.
+- **NLP-Based Product Similarity**: Leverage NLP techniques (e.g., TF-IDF or Sentence-BERT on `product_name` and `product_description`) to compute similarity scores with existing products. This allows the model to borrow sales patterns from analogous products, effectively addressing the cold-start limitation.
+
+
+### 8.2 Modeling Layer
+
+#### 8.2.1 Limitations
+- **High Accuracy but Low Interpretability**: While the Random Forest achieves near-perfect predictive power (R² = 0.9999), its ensemble nature acts as a black box. Stakeholders cannot easily understand *why* a specific order-item received a particular sales prediction.
+- **Correlation, Not Causation**: Feature importance (e.g., `order_item_quantity`) indicates strong correlation, but does not imply that increasing order quantity will *cause* a proportional sales increase. Strategic interventions based on these correlations may fail without causal validation.
+- **Poor Extrapolation**: Tree-based models (Random Forest, Gradient Boosting) cannot reliably extrapolate beyond the feature ranges observed in the training data. Unprecedented combinations of features (e.g., extreme quantities or new markets) will yield unpredictable results.
+
+#### 8.2.2 Strategic Next Steps
+- **Visualize Decision Logic for Key Predictions**: Integrate SHAP (SHapley Additive exPlanations) or LIME into the dashboard to provide instance-level explanations for high-value or anomalous predictions, helping stakeholders trace which features drove a specific forecast.
+- **Human Review for Critical Orders**: Implement a rule-based triage system—orders that fall outside the model's training distribution (e.g., extreme quantities or new product categories) should trigger a human-in-the-loop review before being used for automated inventory/pricing decisions.
+- **Validate via Real-World Pilot Trials**: Before full-scale deployment, conduct controlled A/B testing or pilot trials on a subset of products/regions. This empirically validates whether model-driven recommendations (e.g., dynamic pricing) actually improve sales and profit in practice, distinguishing correlation from actionable causation.
+
+
+### 8.3 System Layer
+
+#### 8.3.1 Limitations
+- **Offline Batch Mode**: Currently, all analyses and predictions are generated offline via Jupyter Notebooks and a local Streamlit dashboard. There is no real-time API integration with existing ERP or order management systems.
+- **No Monitoring or Alerts**: The system lacks automated performance tracking. If model accuracy degrades over time due to concept drift, or if input data quality deteriorates, there are no built-in alerts to notify the operations team.
+
+#### 8.3.2 Strategic Next Steps
+- **Containerize Pipeline**: Package the entire preprocessing, feature engineering, and prediction pipeline using Docker. This ensures environment consistency and simplifies deployment across development, staging, and production environments.
+- **Gradually Enable Real-Time API**: Develop a lightweight RESTful API (e.g., using FastAPI or Flask) that exposes the trained Random Forest model. Start with internal batch inference, then progressively enable synchronous, on-demand predictions for critical order items.
+- **Build Anomaly Alert Dashboard**: Extend the current dashboard with a dedicated monitoring module that tracks key metrics (e.g., prediction error drift, input feature distribution shifts, data null-rate spikes). Configure automated alerts (via email or Slack) when performance falls below acceptable thresholds, enabling proactive intervention rather than reactive troubleshooting.
+
+----
 
 ## References
 
